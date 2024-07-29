@@ -1,0 +1,477 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+body {
+    background-color: black;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    flex-direction: column;
+    font-family: "Oswald", sans-serif;
+    /* background-image: url(./backg.gif);
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+background-attachment: fixed; */
+}
+/* html, body {
+    height: 100%;
+    margin: 0;
+  } */
+#vanta-canvas {
+    width: 100%;
+  
+    margin-top: -40px;
+  } 
+  .logo img{
+    height: 10rem;
+
+}
+.logo{
+    display: flex;
+    justify-content: center;
+}
+.start{
+    color: aliceblue;
+    /* background-color: aqua; */
+    width: 100%;
+    text-align: center;
+    height: 20rem;
+    margin-top: 30px;
+}
+.title{
+    font-size: 5rem;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glow {
+    0%, 100% { text-shadow: 0 0 20px rgba(0, 255, 255, 1), 0 0 30px rgba(0, 255, 255, 0.8), 0 0 40px rgba(0, 255, 255, 0.6); }
+    50% { text-shadow: 0 0 30px rgba(0, 255, 255, 1), 0 0 40px rgba(0, 255, 255, 0.8), 0 0 50px rgba(0, 255, 255, 0.4); }
+}
+
+.team {
+    font-size: 5.8rem;
+    font-family: "Bodoni Moda SC", serif;
+    color: #ffffff;
+    animation: fadeIn 2s ease-out, glow 1.5s ease-in-out infinite;
+    margin-top: -25px;
+}
+   
+
+
+
+
+
+.port {
+    color: #ffffff;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 4rem;
+    /* border: 4px outset gray; */
+    /* padding: 1rem;  */
+    /* position: relative;  */
+    /* background: rgba(0, 0, 0, 0.5); Semi-transparent background */
+    /* backdrop-filter: blur(5px);  */
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+/* .port::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3); 
+    z-index: -1; 
+    border-radius: 10px; 
+} */
+
+/* Define fade-in and fade-out animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(20px); }
+}
+
+.photo {
+    position: relative;
+    height: 24rem;
+    width: 17rem;
+    background-color: #ffffff;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: bold;
+    border: 1px solid white;
+    border-radius: 30px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.5s ease, background-color 0.5s ease;
+    opacity: 0; /* Start as invisible */
+    animation: fadeOut 1s ease-out; /* Initial animation */
+}
+
+/* Add animation classes for visibility */
+.photo.visible {
+    animation: fadeIn 1s ease-out; /* Fade-in animation */
+}
+
+.photo:hover {
+    transform: scale(1.05); /* Slightly scale up the card */
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8); /* Add a glowing shadow effect */
+    background-color: #000000; /* Change background color on hover */
+}
+
+/* Optional: Adding a pulsating effect */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.photo {
+    position: relative;
+    height: 24rem;
+    width: 17rem;
+    background-color: #ffffff;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: bold;
+    border: 2px solid white;
+    border-radius: 10px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.5s ease, background-color 0.5s ease;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(20px); /* Start off slightly below */
+}
+
+.photo.visible {
+    animation: fadeInUp 1s forwards; /* Animation for the visible state */
+}
+
+.photo:hover::before {
+    opacity: 1;
+}
+
+.photo img {
+    position: absolute; /* Positioning context for full coverage */
+    top: 0;
+    left: 0;
+    width: 100%; /* Cover the full width of the parent */
+    height: 100%; /* Cover the full height of the parent */
+    object-fit: cover; /* Ensure the image covers the div */
+    z-index: 1; /* Ensure the image is below other content */
+}
+.photo:hover {
+    transform: scale(1) rotate(0deg); /* Scale up and slightly rotate */
+    box-shadow: 0 0 55px #3b79ed;; /* Blue glow effect */
+    filter: brightness(1.2); /* Slightly increase brightness */
+}
+.photo h1 {
+    position: absolute;
+    bottom: 1rem; /* Position at the bottom of the photo card */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 2; /* Ensure text is above the small card */
+    font-size: 2rem;
+}
+.photo:hover h1 {
+    transform: translateY(100%); /* Move the name down */
+    opacity: 0; /* Fade out the name */
+}
+
+.small-card {
+    position: absolute;
+    bottom: 0; /* Align with the bottom of the main card */
+    left: 50%;
+    transform: translateX(-50%) scaleY(0); /* Initially scale to height 0 */
+    height: 6rem; /* Height of the small card */
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark backdrop effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Optional shadow for better visibility */
+    border: 2px solid #ffffff; /* White border */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transitions */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem; /* Adjust padding as needed */
+    z-index: 1; /* Ensure it appears above other content */
+    opacity: 0; /* Initially hidden */
+    border-radius: 30px;
+}
+.photo:hover .small-card {
+    transform: translateX(-50%) scaleY(1); /* Expand the card on hover */
+    opacity: 1; /* Show the small card on hover */
+}
+.small-card svg {
+    max-height: 2.5rem; /* Adjust size as needed */
+    max-width: 2.5rem; /* Adjust size as needed */
+    margin: 0 0.5rem; /* Space between icons */
+    fill: #ffffff; /* Color of the SVG icons */
+    opacity: 0; /* Initially hidden */
+    cursor: pointer;
+    filter: drop-shadow(0 0 15px #3b79ed); /* Blue glow effect */
+    animation: svgAnimation 0.5s ease forwards; /* Apply animation */
+}
+.icon-link svg {
+    width: 70px; /* Adjust the size as needed */
+    height: 70px; /* Adjust the size as needed */
+    fill: #333; /* Adjust color if needed */
+    transition: transform 0.3s ease;
+    fill: #ffffff;
+   
+}
+.icon-link:hover svg {
+    transform: scale(1.2); /* Scale up the SVG on hover */
+}
+/* Keyframes for animation */
+@keyframes svgAnimation1 {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%) scale(0.5); /* Start from left and smaller */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1); /* End at original position */
+    }
+}
+@keyframes svgAnimation2 {
+    0% {
+        opacity: 0;
+        transform: translateX(0) scale(0.5); /* Start from original position and smaller */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1); /* End at original position */
+    }
+}
+
+@keyframes svgAnimation3 {
+    0% {
+        opacity: 0;
+        transform: translateX(100%) scale(0.5); /* Start from right and smaller */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1); /* End at original position */
+    }
+}
+.photo:hover .small-card svg:nth-of-type(1) {
+    animation: svgAnimation1 0.5s ease forwards;
+    animation-delay: 0.5s;
+}
+
+.photo:hover .small-card svg:nth-of-type(2) {
+    animation: svgAnimation2 0.5s ease forwards;
+    animation-delay: 0.9s;
+}
+
+.photo:hover .small-card svg:nth-of-type(3) {
+    animation: svgAnimation3 0.5s ease forwards;
+    animation-delay: 1.5s;
+}
+
+.bigdiv {
+    display: flex;
+    justify-content: center; /* Center the cards horizontally */
+    align-items: center;     /* Center the cards vertically */
+    gap: 100px;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap; /* Allow wrapping if the container is too narrow */
+    text-align: center; /* Center text inside the cards, if applicable */
+}
+@media (max-width: 1200px) {
+    .title {
+        font-size: 5rem;
+    }
+
+    .team {
+        font-size: 5.3rem;
+        margin-bottom: -3%;
+    }
+
+    .photo {
+        height: 26rem;
+        width: 19rem;
+    }
+
+    .small-card {
+        height: 5rem;
+    }
+
+    .bigdiv {
+        gap: 100px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+@media (max-width: 992px) {
+    .title {
+        font-size: 5rem;
+    }
+
+    .team {
+        font-size: 5.5rem;
+        margin-bottom: -2%;
+    }
+    .port{
+        font-size: 2.5rem;
+    }
+    .photo {
+        height: 25rem;
+        width: 20rem;
+    }
+
+    .small-card {
+        height: 4rem;
+    }
+
+    .bigdiv {
+        gap: 80px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 4.5rem;
+    }
+
+    .team {
+        font-size: 5.4rem;
+        margin-bottom: -2%;
+    }
+
+    .photo {
+        height: 24rem;
+        width: 20rem;
+    }
+    .port{
+        font-size: 2rem;
+    }
+    h1{
+        font-size: 2rem;
+    }
+    .small-card {
+        height: 3rem;
+    }
+
+    .bigdiv {
+        flex-direction: column;
+        gap: 40px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .small-card svg {
+        max-height: 2.3rem; /* Adjust size as needed */
+        max-width: 2.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .title {
+        font-size: 5rem;
+    }
+
+    .team {
+        font-size: 5rem;
+        margin-bottom: -2%;
+    }
+    
+    .photo {
+        height: 24rem;
+        width: 20rem;
+    }
+    h1{
+        font-size: 2rem;
+    }
+    .small-card {
+        height: 2rem;
+    }
+
+    .bigdiv {
+       
+        gap: 70px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-content: centerf;
+    }
+    .small-card svg {
+        max-height: 2rem; /* Adjust size as needed */
+        max-width: 2rem;
+    }
+}
+@media (max-width: 483px){
+    .team {
+        font-size: 5rem;
+        margin-bottom: -2%;
+    }
+    .port{
+        font-size: 2rem;
+        margin-top: 10px;
+    }
+}
+@media (max-width: 478px){
+    .title {
+        font-size: 3.5rem;
+        
+    }
+    .team{
+        font-size: 3rem;
+    }
+    .photo {
+        height: 22rem;
+        width: 18rem;
+    }
+
+    .small-card {
+        height: 2rem;
+    }
+
+    .bigdiv {
+        flex-direction: column;
+        gap: 60px;
+    }
+}
+@media (max-width: 495px){
+    .title {
+        font-size: 3.5rem;
+        
+    }
+    .team{
+        font-size: 3rem;
+    }
+}
+@media (max-width: 494px){
+    .title {
+        font-size: 3.5rem;
+        
+    }
+    .team{
+        font-size: 3rem;
+    }
+    .port{
+        margin-top: -3%;
+    }
+}
+@media (max-width: 422px){
+   
+    .team{
+        font-size: 3.5rem;
+    }
+    
+}
